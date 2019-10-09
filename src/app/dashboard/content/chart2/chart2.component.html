@@ -1,0 +1,38 @@
+<h4> Chart 2 - Dynamic Charts</h4>
+<ngx-spinner></ngx-spinner>
+<div class="alert alert-info"  *ngIf="error">{{message}}</div>
+<tabs *ngIf="!error">
+    <tab tabTitle="Bar Chart with sorting and re-structuring">
+        <div>
+            <div>
+              <div style="display: block">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" 
+                [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas>
+              </div>
+              <button mat-button mat-raised-button color="primary" (click)="reStructureChart()">Re-Structure Chart</button>
+              <button mat-button mat-raised-button color="primary" (click)="sort('productA')" style="margin-left: 50px;">Sort Data by Product A</button>
+              <button mat-button mat-raised-button color="primary" (click)="sort('productB')" style="margin-left: 50px;">Sort Data by Product B</button>
+            </div>
+          </div>
+          <br>
+          <h6> A Bar Chart is a chart that presents categorial data with rectangular bars with heights proportional to the values that they represents.
+              This Bar chart shows comparison among the sales of two products in the past 10 years.</h6>
+    </tab>
+    <tab tabTitle="Pie Chart with aggregate query result">
+        <div>
+          <div>
+            <div class="chart">
+              <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+              </canvas>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h6> A Pie chart is a circular statistical graphics, which is divided into slices to illustrate numerical
+          proportion.
+          This Pie chart shows the total count of each chart types used in this application.
+        </h6>
+      </tab>
+  <tabs>

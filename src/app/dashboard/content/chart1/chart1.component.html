@@ -1,0 +1,56 @@
+<h4> Chart 1 - Static Charts</h4>
+<ngx-spinner></ngx-spinner>
+<div class="alert alert-info"  *ngIf="error">{{message}}</div>
+<tabs *ngIf ="!error">
+  <tab tabTitle="Pie Chart">
+    <div>
+      <div>
+        <div class="chart">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h6> A Pie chart is a circular statistical graphics, which is divided into slices to illustrate numerical
+      proportion.
+      This Pie chart shows the comparison between the sales of the product through different medium such as Online
+      Sales, In store sales etc.
+    </h6>
+  </tab>
+  <tab tabTitle="Doughnut Chart">
+    <div>
+      <div>
+        <div style="display: block">
+          <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h6> The Doughnut Chart is a built-in chart type in Excel. Doughnut charts are meant to express a "part-to-whole"
+      relationship, where all pieces together represent 100%.
+      This Doughnut chart shows the comparison between the sales of the product through different medium such as Online
+      Sales, In store sales etc in past 3 years.
+    </h6>
+  </tab>
+  <tab tabTitle="Polar Area Chart">
+    <div>
+      <div>
+        <div style="display: block">
+          <canvas baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend"
+            [colors]="doughnutChartColors" [chartType]="polarAreaChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h6>
+      Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment
+      differs depending on the value.
+      This Polar area chart shows the comparison between the sales of the product through different medium such as
+      Online Sales, In store sales etc.
+    </h6>
+  </tab>
+  <tabs>

@@ -1,0 +1,11 @@
+.divCards {
+    height: 200px;
+    background: #aaa;
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    border-radius: 30px;
+  }
+
+  .textCls{
+    padding-top: 55px;
+  }
